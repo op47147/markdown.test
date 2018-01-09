@@ -1,2 +1,3 @@
-# markdown.test
-for my gitbook :)
+# Tinker Board Document
+
+This document is written by TinkerAsus Team.
