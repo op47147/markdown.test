@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-* [About this documentation](README.md)
-* [Installation and Setup](setup.md)
+* [README](README.md)
+* [test](test.md)
 
 ### Your Content
