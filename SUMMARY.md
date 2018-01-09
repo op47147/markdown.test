@@ -46,7 +46,7 @@
     * [Kernel Command]
     * [Device Tree]
     * [Localization]
-    * [Firmware Warning]
+    * [Firmware Warning](Configuration/FirmwareWarning.md)
     * [Security]
     * [ScreenSaver]
 * Remote Access
