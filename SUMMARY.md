@@ -19,7 +19,7 @@
         * [Getting Started with C/C++]
         * [C/C++ GPIO Usage Guide]
     * Video
-    * Audio
+    * [Audio](usage/audio/README.md)
 * Configuration
     * [Tinker Confiugrator]
         * [Tinker Config]
@@ -46,7 +46,7 @@
     * [Kernel Command]
     * [Device Tree]
     * [Localization]
-    * [<font color="blue">Firmware Warning</font>](Configuration/FirmwareWarning.md)
+    * [Firmware Warning](Configuration/warning-icons.md)
     * [Security]
     * [ScreenSaver]
 * Remote Access
