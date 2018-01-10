@@ -18,7 +18,7 @@ bui# Summary
     * C/C++
         * [Getting Started with C/C++]
         * [C/C++ GPIO Usage Guide]
-    * Video
+    * [Video](usage/video/README.md)
     * [Audio](usage/audio/README.md)
 * Configuration
     * [Tinker Confiugrator]
