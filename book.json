@@ -28,7 +28,10 @@
         "pageNumbers": false,
         "paperSize": "a4"
     },
-    "plugins": ["toggle-chapters"],
+    "plugins": ["expandable-chapters"],
     "title": "Sample GitBook",
     "variables": {}
+    "pluginsConfig": {
+        "expandable-chapters":{}
+    }
 }
