@@ -28,7 +28,7 @@
         "pageNumbers": false,
         "paperSize": "a4"
     },
-    "plugins": [],
+    "plugins": ["summary"],
     "title": "Sample GitBook",
     "variables": {}
 }
