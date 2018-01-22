@@ -1,12 +1,5 @@
 # Summary
 
-### Getting Started
-
-* [README && License](README.md)
-* [Wiki](https://tinkerboarding.co.uk/wiki/index.php?title=Main_Page)
-* [forum](https://tinkerboarding.co.uk/forum/index.php)
-* [NewFile](NewFile.md)
-
 ### TinkerBoard documentations
 
 * API
@@ -90,3 +83,14 @@
         * [MEIG_debian]
         * [MEIG_android]
 
+
+
+==============================================
+
+
+### Getting Started
+
+* [README && License](README.md)
+* [Wiki](https://tinkerboarding.co.uk/wiki/index.php?title=Main_Page)
+* [forum](https://tinkerboarding.co.uk/forum/index.php)
+* [NewFile](NewFile.md)
