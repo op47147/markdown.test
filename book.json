@@ -4,4 +4,7 @@
     "plugins": {"expandable-chapters"}
     "title": "Sample GitBook",
     "variables": {}
+    "pluginsConfig": {
+		"expandable-chapters":{}
+	}
 }
