@@ -1,9 +1,8 @@
 {
-    "author": "Lyle_Lin",
+    "author": "ASUS Tinker",
     "description": "This is a sample book created by gitbook",
     "plugins": ["expandable-chapters"],
     "title": "Sample GitBook",
-    "variables": {},
     "pluginsConfig": {
         "expandable-chapters":{}
     }
