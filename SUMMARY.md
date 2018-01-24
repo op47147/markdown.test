@@ -1,4 +1,4 @@
-# Sample GitBook
+# Tinker Board Documents
 
 - API
   - [Audio](API/audio/README.md)

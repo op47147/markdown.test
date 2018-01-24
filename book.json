@@ -2,7 +2,7 @@
     "author": "ASUS Tinker",
     "description": "This is a sample book created by gitbook",
     "plugins": ["expandable-chapters"],
-    "title": "Sample GitBook",
+    "title": "Tinker Board Documents",
     "pluginsConfig": {
         "expandable-chapters":{}
     }
