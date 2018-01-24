@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * API
-    * [audio](API/audio/README.md)
+    * [Audio](API/Audio/README.md)
     * C and C++
         * [C and C++ GPIO Usage Guide](API/C and C++/C and C++ GPIO Usage Guide/README.md)
         * [Getting Started with C and C++](API/C and C++/Getting Started with C and C++/README.md)
@@ -12,7 +12,7 @@
     * Scratch
         * [Getting Started with Scratch](API/Scratch/Getting Started with Scratch/README.md)
         * [Scratch GPIO Usage Guide](API/Scratch/Scratch GPIO Usage Guide/README.md)
-    * [video](API/video/README.md)
+    * [Video](API/Video/README.md)
 * Configuration
     * Boot Device
         * [External Storage Config](Configuration/Boot Device/External Storage Config/README.md)
