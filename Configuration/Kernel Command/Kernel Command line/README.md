@@ -1,2 +1,2 @@
-# Kernel Command Line
+# Kernel Command line
 

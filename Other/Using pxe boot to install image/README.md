@@ -1,2 +1,2 @@
-# Using Pxe Boot To Install Image
+# Using pxe boot to install image
 

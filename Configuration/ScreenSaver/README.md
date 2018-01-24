@@ -1,2 +1,2 @@
-# Screen Saver
+# ScreenSaver
 

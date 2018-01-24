@@ -1,2 +1,2 @@
-# Qt With Wayland
+# Qt with Wayland
 

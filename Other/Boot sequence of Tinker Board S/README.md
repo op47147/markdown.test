@@ -1,2 +1,2 @@
-# Boot Sequence Of Tinker Board S
+# Boot sequence of Tinker Board S
 

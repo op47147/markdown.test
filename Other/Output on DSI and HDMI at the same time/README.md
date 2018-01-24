@@ -1,2 +1,2 @@
-# Output On DSI And HDMI At The Same Time
+# Output on DSI and HDMI at the same time
 

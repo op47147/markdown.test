@@ -1,2 +1,2 @@
-# Getting Started With Python
+# Getting Started with Python
 

@@ -1,2 +1,2 @@
-# Text Editors
+# Text editors
 

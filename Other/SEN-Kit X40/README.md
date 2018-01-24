@@ -1,2 +1,2 @@
-# SEN Kit X 40
+# SEN-Kit X40
 

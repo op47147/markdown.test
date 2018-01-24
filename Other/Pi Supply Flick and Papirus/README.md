@@ -1,2 +1,2 @@
-# Pi Supply Flick And Papirus
+# Pi Supply Flick and Papirus
 

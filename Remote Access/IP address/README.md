@@ -1,2 +1,2 @@
-# IP Address
+# IP address
 

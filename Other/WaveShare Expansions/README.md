@@ -1,2 +1,2 @@
-# Wave Share Expansions
+# WaveShare Expansions
 

@@ -1,2 +1,2 @@
-# Rsync
+# rsync
 

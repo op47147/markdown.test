@@ -1,2 +1,0 @@
-# Grove Pi Starter Kit
-

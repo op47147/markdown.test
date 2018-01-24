@@ -1,2 +1,2 @@
-# Google Assistant SDK
+# Google assistant SDK
 

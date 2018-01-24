@@ -1,2 +1,2 @@
-# LED Sample Code
+# LED sample code
 

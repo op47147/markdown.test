@@ -1,2 +1,2 @@
-# UART Configuration
+# UART configuration
 

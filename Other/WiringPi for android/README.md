@@ -1,2 +1,2 @@
-# Wiring Pi For Android
+# WiringPi for android
 

@@ -1,2 +1,2 @@
-# Securing Your Tinker
+# Securing your Tinker
 

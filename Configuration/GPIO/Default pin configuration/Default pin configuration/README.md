@@ -1,2 +1,2 @@
-# Default Pin Configuration
+# Default pin configuration
 

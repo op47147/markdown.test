@@ -1,2 +1,2 @@
-# Pigpio
+# pigpio
 

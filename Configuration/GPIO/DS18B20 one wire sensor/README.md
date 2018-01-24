@@ -1,2 +1,2 @@
-# DS 18 B 20 One Wire Sensor
+# DS18B20 one wire sensor
 

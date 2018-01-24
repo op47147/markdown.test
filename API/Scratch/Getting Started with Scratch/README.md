@@ -1,2 +1,2 @@
-# Getting Started With Scratch
+# Getting Started with Scratch
 
