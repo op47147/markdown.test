@@ -8,6 +8,6 @@ If the power supply to the tinkerboard drops below 4.63V (+/-5%), a notification
 
 ![Plug-04.png][1]
 
-<img src="/Configuration/Plug-04.png" title="Plug-04.png" width="50px" height="50px">
+<img src="Plug-04.png" title="Plug-04.png" width="50px" height="50px">
 
-[1]: /Configuration/Plug-04.png
+[1]: Plug-04.png
