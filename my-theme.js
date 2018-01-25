@@ -6,9 +6,27 @@ require('gitbook', function(gitbook) {
             id: 0
         },
         {
-            config: 'Sepia',
+            config: 'serif',
+            text: 'serif',
+            id: 1
+        }
+    ];
+    // Default themes
+    var THEMES = [
+        {
+            config: 'white',
+            text: 'White',
+            id: 0
+        },
+        {
+            config: 'sepia',
             text: 'Sepia',
             id: 1
+        },
+        {
+            config: 'night',
+            text: 'Night',
+            id: 2
         }
     ];
 
@@ -21,5 +39,7 @@ require('gitbook', function(gitbook) {
         gitbook.fontsettings.setFamilies(FONT_FAMILIES);
         // Set to configured font-family
         gitbook.fontsettings.setFamily(defaultFont);
+        // Set
+        gitbook.fontsettings.setTheme('night');
     });
 });
