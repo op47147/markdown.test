@@ -133,36 +133,26 @@ You will be prompted for a passphrase during key generation: this is an extra le
 The public key now needs to be moved on to the server. This can be done by email, or cut and paste, or file copying. Once on the server it needs to be added to the SSH systems authorised keys. It should be emphasised that the id\_rsa file is the private key and SHOULD NOT LEAVE THE CLIENT, whilst the public key file is id\_rsa.pub.
 
 Add the new public key to the authorisation file as follows:
-
 ```
 cat id_rsa.pub >> ~/.ssh/authorized_keys
 ```
-
 Alternatively, you can edit the file sudo vim ~/.ssh/authorized\_keys and copy/paste the key in. It is perfectly acceptable to have multiple entries in the authorized\_keys file, so SSH can support multiple clients.
 
 Note that the authorized\_keys file needs the correct permissions to be read correctly by the ssh system.
-
 ```
 sudo chmod 644 ~/.ssh/authorized_keys
 ```
-
 Finally, we need to disable password logins, so that all authentication is done by the key pairs.
-
 ```
 sudo vim /etc/ssh/sshd_config
 ```
-
 There are three lines that need to be changed to no, if they are not set that way already:
 
-\`\`\`
-
+```
 ChallengeResponseAuthentification no
-
 PasswordAuthentification no
-
 UsePAM no
-
-\`\`\`
+```
 
 Save the file and either restart the ssh system with sudo service ssh reload or reboot.
 
@@ -174,28 +164,29 @@ ufw is a fairly straightforward command line tool, although there are some GUIs 
 
 To enable the firewall, which will also ensure it starts up on boot, use:
 
+```
 sudo ufw enable
-
+```
 To disable the firewall, and disable start up on boot, use:
-
+```
 sudo ufw disable
-
+```
 Allow a particular port to have access \(we have used port 22 in our example\):
-
+```
 sudo ufw allow 22
-
+```
 Denying access on a port is also very simple \(again, we have used port 22 as an example\):
-
+```
 sudo ufw deny 22
-
+```
 You can also specify which service you are allowing or denying on a port. In this example, we are denying tcp on port 22:
-
+```
 sudo ufw deny 22/tcp
-
+```
 You can specify the service even if you do not know which port it uses. This example allows the ssh service access through the firewall:
-
+```
 sudo ufw allow ssh
-
+```
 The status commmand lists all current settings for the firewall:
 
 sudo ufw status
