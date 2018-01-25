@@ -10,7 +10,7 @@ Even if you are hidden behind a firewall, it is sensible to take security seriou
 
 ### CHANGE YOUR DEFAULT PASSWORD
 
-For every single tinkerboard, the default username and password is identical, with this risk, if someone can get access to a tinkerboard, and these settings have not been changed, you have root access to that tinkerboard.
+For every single tinkerboard, the default username and password is identical, with this risk, if someone can get access to a tinkerboard, and these settings have not been changed, you have `root` access to that tinkerboard.
 
 So the first thing to do is change the password. This can be done via the tinker-config application, or from the command line.
 
@@ -20,21 +20,21 @@ sudo tinker-config
 
 Select option `2 Change User Password`,  and follow the instructions to change the password.
 
-In fact, all tinker-config does is start up the command line passwd application, which you can do from the command line. Enter the command, simply follow the instructions and update your new password.
+In fact, all tinker-config does is start up the command line `passwd` application, which you can do from the command line. Enter the command, simply follow the instructions and update your new password.
 
 ```
 passwd
 ```
 
-### CHANGING YOUR USERNAME 
+### CHANGING YOUR USERNAME
 
-Try to make your tinkerboard even more secure by also changing your username. All tinkerboard come with the default username linaro, so changing this will immediately make your tinkerboard more secure. To add a new user tinkeruser with the same permissions as the linaro user:
+Try to make your tinkerboard even more secure by also changing your username. All tinkerboard come with the default username `linaro`, so changing this will immediately make your tinkerboard more secure. To add a new user `tinkeruser` with the same permissions as the `linaro` user:
 
 ```
 sudo useradd -m tinkeruser -G sudo
 ```
 
-This adds a new user called tinkeruser, creates a home folder, and adds the user to the sudo group. You now need to set a password for the new user:
+This adds a new user called `tinkeruser`, creates a home folder, and adds the user to the `sudo` group. You now need to set a password for the new user:
 
 ```
 sudo passwd tinkeruser
@@ -46,13 +46,13 @@ Log out and log back with the new account details. Check your permissions are in
 sudo visudo
 ```
 
-The `visudo` command can only be run by an account with sudo privileges. If it runs successfully, then you can be sure that the new account is in the sudo group.
+The `visudo` command can only be run by an account with sudo privileges. If it runs successfully, then you can be sure that the new account is in the `sudo` group.
 
-Once you have confirmed that the new account is working, you can delete the linaro user. Please note, though, that with the current tinkerboard distribution, there are some aspects that require the linaro user to be present.
+Once you have confirmed that the new account is working, you can delete the `linaro` user. Please note, though, that with the current tinkerboard distribution, there are some aspects that require the `linaro` user to be present.
 
-If you are unsure whether you will be affected by this, then leave the linaro user in place. Work is being done to reduce the dependency on the linaro user.
+If you are unsure whether you will be affected by this, then leave the `linaro` user in place. Work is being done to reduce the dependency on the `linaro` user.
 
-If you wnat to delete linaro user, type the following command:
+If you wnat to delete `linaro` user, type the following command:
 
 ```
 sudo deluser linaro
@@ -82,7 +82,7 @@ linaro ALL=(ALL) PASSWD: ALL
 
 Now save the file.
 
-### ENSURE YOU HAVE THE LATEST SECURITY FIXES 
+### ENSURE YOU HAVE THE LATEST SECURITY FIXES
 
 This can be as simple as ensuring your version of Debian is up-to-date, as an up-to-date distribution contains all the latest security fixes.
 
@@ -92,11 +92,11 @@ If you are using SSH to connect to your thinkerboard, it can be worthwhile to ad
 sudo apt-get install openssh-server
 ```
 
-### IMPROVING SSH SECURITY 
+### IMPROVING SSH SECURITY
 
 SSH is a common way of accessing a tinkerboard remotely. By default, logging in with SSH requires a username/password pair, and there are ways to make this more secure. An even more secure method is to use key based authentication.
 
-### IMPROVING USERNAME/PASSWORD SECURITY 
+### IMPROVING USERNAME/PASSWORD SECURITY
 
 The most important thing to do is ensure you have a very robust password. If your tinkerboard is exposed to the internet, the password needs to be very secure. This will help to avoid dictionary attacks or the like.
 
@@ -120,7 +120,7 @@ DenyUsers eve frank
 
 After the change you will need to restart the `sshd` service using  `sudo systemctl restart ssh` or reboot so the changes take effect.
 
-### USING KEY-BASED AUTHENTICATION. 
+### USING KEY-BASED AUTHENTICATION.
 
 Key pairs are two cryptographically secure keys. One is private, and one is public. They can be used to authenticate a client to an SSH server.
 
@@ -133,19 +133,25 @@ You will be prompted for a passphrase during key generation: this is an extra le
 The public key now needs to be moved on to the server. This can be done by email, or cut and paste, or file copying. Once on the server it needs to be added to the SSH systems authorised keys. It should be emphasised that the id\_rsa file is the private key and SHOULD NOT LEAVE THE CLIENT, whilst the public key file is id\_rsa.pub.
 
 Add the new public key to the authorisation file as follows:
+
 ```
 cat id_rsa.pub >> ~/.ssh/authorized_keys
 ```
+
 Alternatively, you can edit the file sudo vim ~/.ssh/authorized\_keys and copy/paste the key in. It is perfectly acceptable to have multiple entries in the authorized\_keys file, so SSH can support multiple clients.
 
 Note that the authorized\_keys file needs the correct permissions to be read correctly by the ssh system.
+
 ```
 sudo chmod 644 ~/.ssh/authorized_keys
 ```
+
 Finally, we need to disable password logins, so that all authentication is done by the key pairs.
+
 ```
 sudo vim /etc/ssh/sshd_config
 ```
+
 There are three lines that need to be changed to no, if they are not set that way already:
 
 ```
@@ -154,112 +160,133 @@ PasswordAuthentification no
 UsePAM no
 ```
 
-Save the file and either restart the ssh system with sudo service ssh reload or reboot.
+Save the file and either restart the ssh system with `sudo service ssh reload` or reboot.
 
-INSTALL A FIREWALL There are many firewall solutions available for Linux. Most use the underlying iptables project to provide packet filtering. This project sits over the Linux netfiltering system. iptables is installed by default on Debian, but is not set up. Setting it up can be a complicated task, and one project that provides a simpler interface than iptables is ufw, which stands for 'Uncomplicated Fire Wall'. This is the default firewall tool in Ubuntu, and can be easily installed on your tinkerboard:
+### INSTALL A FIREWALL
 
+There are many firewall solutions available for Linux. Most use the underlying iptables project to provide packet filtering. This project sits over the Linux netfiltering system. iptables is installed by default on Debian, but is not set up. Setting it up can be a complicated task, and one project that provides a simpler interface than iptables is ufw, which stands for 'Uncomplicated Fire Wall'. This is the default firewall tool in Ubuntu, and can be easily installed on your tinkerboard:
+
+```
 sudo apt-get install ufw
+```
 
-ufw is a fairly straightforward command line tool, although there are some GUIs available for it. This document will describe a few of the basic command line options. Note that ufw needs to be run with superuser privileges, so all commands are preceded with sudo. It is also possible to use the option --dry-run any ufw commands, which indicates the results of the command without actually making any changes.
+`ufw` is a fairly straightforward command line tool, although there are some GUIs available for it. This document will describe a few of the basic command line options. Note that `ufw` needs to be run with superuser privileges, so all commands are preceded with `sudo`. It is also possible to use the option `--dry-run` any `ufw` commands, which indicates the results of the command without actually making any changes.
 
 To enable the firewall, which will also ensure it starts up on boot, use:
 
 ```
 sudo ufw enable
 ```
+
 To disable the firewall, and disable start up on boot, use:
+
 ```
 sudo ufw disable
 ```
+
 Allow a particular port to have access \(we have used port 22 in our example\):
+
 ```
 sudo ufw allow 22
 ```
+
 Denying access on a port is also very simple \(again, we have used port 22 as an example\):
+
 ```
 sudo ufw deny 22
 ```
+
 You can also specify which service you are allowing or denying on a port. In this example, we are denying tcp on port 22:
+
 ```
 sudo ufw deny 22/tcp
 ```
+
 You can specify the service even if you do not know which port it uses. This example allows the ssh service access through the firewall:
+
 ```
 sudo ufw allow ssh
 ```
+
 The status commmand lists all current settings for the firewall:
 
+```
 sudo ufw status
+```
 
 The rules can be quite complicated, allowing specific IP addresses to be blocked, specifying in which direction traffic is allowed, or limiting the number of attempts to connect, for example to help defeat a Denial of Service \(DoS\) attack. You can also specify the device rules are to be applied to \(e.g. eth0, wlan0\). Please refer to the  ufw man page \(man ufw\) for full details, but here are some examples of more sophisticated commands.
 
 Limit login attempts on ssh port using tcp: this denies connection if an IP address has attempted to connect six or more times in the last 30 seconds:
 
+```
 sudo ufw limit ssh/tcp
+```
 
 Deny access to port 30 from IP adress 192.168.2.1
 
+```
 sudo ufw deny from 192.168.2.1 port 30
+```
 
-INSTALLING FAIL2BAN If you are using your tinkerboard as some sort of server, for example an ssh or webserver, your firewall will have deliberate 'holes' in it to let the server traffic through. In these cases, Fail2ban can be useful. Fail2ban, written in Python, is a scanner that examines the log files produced by tinkerboard, and checks them for suspicious activity. It catches things like multiple brute-force atttempts to log in, and can inform any installed firewall to stop further login attempts from suspicious IP addresses. It saves you having to manually check log files for intrusion attempts and then update the firewall \(via iptables\) to prevent them.
+### INSTALLING FAIL2BAN 
+
+If you are using your tinkerboard as some sort of server, for example an ssh or webserver, your firewall will have deliberate 'holes' in it to let the server traffic through. In these cases, Fail2ban can be useful. Fail2ban, written in Python, is a scanner that examines the log files produced by tinkerboard, and checks them for suspicious activity. It catches things like multiple brute-force atttempts to log in, and can inform any installed firewall to stop further login attempts from suspicious IP addresses. It saves you having to manually check log files for intrusion attempts and then update the firewall \(via iptables\) to prevent them.
 
 Install Fail2ban using the following command:
 
+```
 sudo apt-get install fail2ban
+```
 
 Note that the version of Fail2ban in the repository \(v0.8.13\) does not support IPv6 networks. If you use IPv6, you will need to install version v0.10 or higher from source. Please see the Fail2ban website for more information on how to do this.
 
 On installation, Fail2ban creates a folder /etc/fail2ban in which there is a configuration file called jail.conf. This needs to be copied to jail.local to enable it. Inside this configuration file are a set of default options, together with options for checking specific services for abnormalities. Do the following to examine/change the rules that are used for ssh:
 
+```
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-
 sudo vim /etc/fail2ban/jail.local
+```
 
 Look for the section on \[ssh\]. It will look something like this.
 
-\[ssh\]
-
-enabled   = true
-
+```
+[ssh]
+enabled     = true
 port        = ssh
+filter      = sshd
+logpath     = /var/log/auth.log
+maxretry    = 6
+```
 
-filter       = sshd
+In FAIL2BAN 0.9.x or above, you need to see both `/etc/fail2ban/jail.local`
 
-logpath   = /var/log/auth.log
+```
+[sshd]
+port        = ssh
+logpath     = %(sshd_log)s
+backend     = %(sshd_backend)s
+```
 
-maxretry = 6
+and `/etc/fail2ban/jail.d/defaults-debian.conf` where we can change any default settings.
 
-In FAIL2BAN 0.9.x or above, you need to see both /etc/fail2ban/jail.local
-
-\[sshd\]
-
-port         = ssh
-
-logpath    = %\(sshd\_log\)s
-
-backend   = %\(sshd\_backend\)s
-
-and /etc/fail2ban/jail.d/defaults-debian.conf where we can change any default settings.
-
-\[sshd\]
-
+```
+[sshd]
 enabled = true
+```
 
-As you can see, this section is named ssh, is enabled, examines the ssh port, filters using the /etc/fail2ban/filters.d/sshd.conf parameters, parses the /var/log/auth.log for malicious activity, and allows six retries before the detection threshold is reached.
+As you can see, this section is named ssh, is enabled, examines the ssh port, filters using the `/etc/fail2ban/filters.d/sshd.conf` parameters, parses the `/var/log/auth.log` for malicious activity, and allows six retries before the detection threshold is reached.
 
-Checking the /etc/fail2ban/jail.local, we can see that the default banning action is:
+Checking the `/etc/fail2ban/jail.local`, we can see that the default banning action is:
 
-\# Default banning action \(e.g. iptables, iptables-new,
-
-\# iptables-multiport, shorewall, etc\) It is used to define
-
-\# action\_\* variables. Can be overridden globally or per
-
-\# section within jail.local file
-
+```
+# Default banning action (e.g. iptables, iptables-new,
+# iptables-multiport, shorewall, etc) It is used to define
+# action_* variables. Can be overridden globally or per
+# section within jail.local file
 banaction = iptables-multiport
+```
 
-iptables-multiport means that the Fail2ban system will run the  /etc/fail2ban/action.d/iptables-multiport.conf file when the detection threshold is reached. There are a number of different action configuration files that can be used. Multiport bans all access on all ports.
+`iptables-multiport` means that the Fail2ban system will run the `/etc/fail2ban/action.d/iptables-multiport.conf` file when the detection threshold is reached. There are a number of different action configuration files that can be used. Multiport bans all access on all ports.
 
-There is a good tutorial on some of the internals of Fail2ban here.
+There is a good tutorial on some of the internals of Fail2ban [here](https://www.digitalocean.com/community/tutorials/how-fail2ban-works-to-protect-services-on-a-linux-server).
 
