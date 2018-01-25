@@ -6,7 +6,7 @@
     "pluginsConfig": {
         "expandable-chapters":{},
         "fontsettings": {
-            "theme": 'white', // 'sepia', 'night' or 'white',
+            "theme": 'sepia', // 'sepia', 'night' or 'white',
             "family": 'sans', // 'serif' or 'sans',
             "size": 2         // 1 - 4
         }
