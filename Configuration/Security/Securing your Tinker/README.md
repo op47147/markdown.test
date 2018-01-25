@@ -126,11 +126,11 @@ Key pairs are two cryptographically secure keys. One is private, and one is publ
 
 The client generates two keys, which are cryptographically linked to each other. The private key should never be released, but the public key can be freely shared. The SSH server takes a copy of the public key, and, when a link is requested, uses this key to send the client a challenge message, which the client will encrypt using the private key. If the server can use the public key to decrypt this message back to the original challenge message, then the identity of the client can be confirmed.
 
-Generating a key pair in Linux is done using the ssh-keygen command on the client; the keys are stored by default in the .ssh folder in the user's home directly. The private key will be called id\_rsa and the associated public key will be called id\_rsa.pub. The key will be 2048 bits long: breaking the encryption on a key of that length would take an extremely long time, so is very secure. You can make longer keys if the situation demands it. Note that you should only do the generation process once: if repeated, it will overwrite any previous generated keys. Anything relying on those old keys will need to be updated to the new keys.
+Generating a key pair in Linux is done using the **ssh-keygen** command on the **client**; the keys are stored by default in the **.ssh** folder in the user's home directly. The private key will be called **id\_rsa** and the associated public key will be called **id\_rsa.pub**. The key will be 2048 bits long: breaking the encryption on a key of that length would take an extremely long time, so is very secure. You can make longer keys if the situation demands it. Note that you should only do the generation process once: if repeated, it will overwrite any previous generated keys. Anything relying on those old keys will need to be updated to the new keys.
 
 You will be prompted for a passphrase during key generation: this is an extra level of security. For the moment, leave this blank.
 
-The public key now needs to be moved on to the server. This can be done by email, or cut and paste, or file copying. Once on the server it needs to be added to the SSH systems authorised keys. It should be emphasised that the id\_rsa file is the private key and SHOULD NOT LEAVE THE CLIENT, whilst the public key file is id\_rsa.pub.
+The public key now needs to be moved on to the server. This can be done by email, or cut and paste, or file copying. Once on the server it needs to be added to the SSH systems authorised keys. It should be emphasised that the **id\_rsa** file is the private key and SHOULD NOT LEAVE THE CLIENT, whilst the public key file is **id\_rsa.pub**.
 
 Add the new public key to the authorisation file as follows:
 
@@ -138,9 +138,9 @@ Add the new public key to the authorisation file as follows:
 cat id_rsa.pub >> ~/.ssh/authorized_keys
 ```
 
-Alternatively, you can edit the file sudo vim ~/.ssh/authorized\_keys and copy/paste the key in. It is perfectly acceptable to have multiple entries in the authorized\_keys file, so SSH can support multiple clients.
+Alternatively, you can edit the file `sudo vim ~/.ssh/authorized_keys` and copy/paste the key in. It is perfectly acceptable to have multiple entries in the authorized\_keys file, so SSH can support multiple clients.
 
-Note that the authorized\_keys file needs the correct permissions to be read correctly by the ssh system.
+Note that the authorized\_keys file needs the correct permissions to be read correctly by the `ssh` system.
 
 ```
 sudo chmod 644 ~/.ssh/authorized_keys
@@ -164,7 +164,7 @@ Save the file and either restart the ssh system with `sudo service ssh reload` o
 
 ### INSTALL A FIREWALL
 
-There are many firewall solutions available for Linux. Most use the underlying iptables project to provide packet filtering. This project sits over the Linux netfiltering system. iptables is installed by default on Debian, but is not set up. Setting it up can be a complicated task, and one project that provides a simpler interface than iptables is ufw, which stands for 'Uncomplicated Fire Wall'. This is the default firewall tool in Ubuntu, and can be easily installed on your tinkerboard:
+There are many firewall solutions available for Linux. Most use the underlying `iptables` project to provide packet filtering. This project sits over the Linux netfiltering system. `iptables` is installed by default on Debian, but is not set up. Setting it up can be a complicated task, and one project that provides a simpler interface than `iptables` is ufw, which stands for 'Uncomplicated Fire Wall'. This is the default firewall tool in Ubuntu, and can be easily installed on your tinkerboard:
 
 ```
 sudo apt-get install ufw
@@ -214,7 +214,7 @@ The status commmand lists all current settings for the firewall:
 sudo ufw status
 ```
 
-The rules can be quite complicated, allowing specific IP addresses to be blocked, specifying in which direction traffic is allowed, or limiting the number of attempts to connect, for example to help defeat a Denial of Service \(DoS\) attack. You can also specify the device rules are to be applied to \(e.g. eth0, wlan0\). Please refer to the  ufw man page \(man ufw\) for full details, but here are some examples of more sophisticated commands.
+The rules can be quite complicated, allowing specific IP addresses to be blocked, specifying in which direction traffic is allowed, or limiting the number of attempts to connect, for example to help defeat a Denial of Service \(DoS\) attack. You can also specify the device rules are to be applied to \(e.g. eth0, wlan0\). Please refer to the  **ufw** man page \(**man ufw**\) for full details, but here are some examples of more sophisticated commands.
 
 Limit login attempts on ssh port using tcp: this denies connection if an IP address has attempted to connect six or more times in the last 30 seconds:
 
@@ -228,7 +228,7 @@ Deny access to port 30 from IP adress 192.168.2.1
 sudo ufw deny from 192.168.2.1 port 30
 ```
 
-### INSTALLING FAIL2BAN 
+### INSTALLING FAIL2BAN
 
 If you are using your tinkerboard as some sort of server, for example an ssh or webserver, your firewall will have deliberate 'holes' in it to let the server traffic through. In these cases, Fail2ban can be useful. Fail2ban, written in Python, is a scanner that examines the log files produced by tinkerboard, and checks them for suspicious activity. It catches things like multiple brute-force atttempts to log in, and can inform any installed firewall to stop further login attempts from suspicious IP addresses. It saves you having to manually check log files for intrusion attempts and then update the firewall \(via iptables\) to prevent them.
 
