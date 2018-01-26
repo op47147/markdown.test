@@ -1,6 +1,7 @@
 # Tinker Board Documents
 
-For testing
+For testing !
+
 This document is written by TinkerAsus team. 
 
 
