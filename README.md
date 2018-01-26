@@ -9,7 +9,7 @@ ASUS Tinker Board : https://www.asus.com/Single-Board-Computer/Tinker-Board/
 
 ASUS Tinker Board S : https://www.asus.com/Single-Board-Computer/Tinker-Board-S/
 
-ASUS Tinker Board Github : [![TBgithub](TBgithub.png)]https://github.com/TinkerBoard
+ASUS Tinker Board Github : [![TBgithub](TBgithub.png)](https://github.com/TinkerBoard)
 
 Tinker Board Community : https://tinkerboarding.co.uk/
 
