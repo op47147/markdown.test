@@ -1,7 +1,7 @@
 {
     "author": "ASUS Tinker",
     "description": "This is a sample book created by gitbook",
-    "plugins": ["toggle-chapters","my-theme"],
+    "plugins": ["toggle-chapters"],
     "title": "Tinker Board Documents",
     "pluginsConfig": {
         "expandable-chapters":{},
