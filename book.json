@@ -11,7 +11,7 @@
             "size": 2
         },
         "page-footer-ex": {
-            "copyright": "**TinkerBoard Documents** by ASUS is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/), and some parts of documents are attributed to [Raspberry Pi Foundation](https://www.raspberrypi.org/). This website is covered by [![Creative Commons Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)",
+            "copyright": "**TinkerBoard Documents** by ASUS is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/). Some parts of documents are attributed to [Raspberry Pi Foundation](https://www.raspberrypi.org/) and modified by ASUS Tinker Board Team. This website is covered by [![Creative Commons Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-sa/4.0/)",
             "markdown": true,
             "update_label": "**updated**",
             "update_format": "YYYY-MM-DD HH:mm:ss"
