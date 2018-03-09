@@ -14,6 +14,3 @@ ASUS Tinker Board Github : [<img src="TBgithub.png" height="50" width="50">](htt
 Tinker Board Community : https://tinkerboarding.co.uk/
 
 Tinker Board Gitbook : https://op47147.gitbooks.io/tinker_asus/content/
-
-<a href="123.txt" target="_blank">Download</a>
-<a href="123.zip" target="_blank">Download2</a>
