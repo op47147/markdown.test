@@ -15,4 +15,4 @@ Tinker Board Community : https://tinkerboarding.co.uk/
 
 Tinker Board Gitbook : https://op47147.gitbooks.io/tinker_asus/content/
 
-<a href="123.txt">Download</a>
+<a href="123.txt" target="_blank">Download</a>
